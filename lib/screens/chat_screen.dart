@@ -30,7 +30,7 @@ class _ChatScreenState extends State<ChatScreen> {
             children: [
               CircleAvatar(
                 maxRadius: 15,
-                minRadius: 20,
+                minRadius: 10,
                 backgroundColor: Colors.amber,
                 child: Image(
                   image: AssetImage("assets/images/man.png"),
@@ -38,7 +38,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 ),
               ),
               SizedBox(
-                width: 20,
+                width: 10,
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -84,7 +84,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       if (chatDataList[index].user == 0)
                         const CircleAvatar(
                           maxRadius: 15,
-                          minRadius: 20,
+                          minRadius: 10,
                           backgroundColor: Colors.amber,
                           child: Image(
                             image: AssetImage("assets/images/man.png"),
@@ -103,7 +103,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       if (chatDataList[index].user == 1)
                         const CircleAvatar(
                           maxRadius: 15,
-                          minRadius: 20,
+                          minRadius: 10,
                           backgroundColor: Colors.amber,
                           child: Image(
                             image: AssetImage("assets/images/man.png"),
@@ -131,7 +131,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 20),
+                          horizontal: 20, vertical: 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -176,7 +176,7 @@ class ChatContainer extends StatelessWidget {
               ? const Color.fromARGB(255, 18, 46, 87)
               : Colors.white,
           borderRadius: BorderRadius.only(
-            bottomLeft: const Radius.circular(20),
+            bottomLeft: const Radius.circular(10),
             bottomRight: chat.user == 0
                 ? const Radius.circular(20)
                 : const Radius.circular(0),
