@@ -27,7 +27,7 @@ class Progress extends StatelessWidget {
           height: 90,
           width: 90,
           child: Center(
-            child: Text("${flagCard.currentIntex}/${flagCard.carouselList.length}"),
+            child: Text("${flagCard.currentIntex+1}/${flagCard.carouselList.length}"),
           ),
         ),
       ]);
@@ -66,7 +66,7 @@ class CircleSegmentPainter extends CustomPainter {
         startAngle,
         sweepAngle,
         false,
-        i < currentIndex ? segmentPaint : backgroundPaint,
+        i <= currentIndex ? segmentPaint : backgroundPaint,
       );
     }
   }
