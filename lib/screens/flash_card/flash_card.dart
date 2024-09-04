@@ -8,7 +8,7 @@ class FlashCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 101, 10, 10),
+          backgroundColor: const Color.fromARGB(255, 164, 13, 238),
           leading: IconButton(onPressed: () {
             
           }, icon: const Icon(Bootstrap.chevron_left)),

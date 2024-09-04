@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:togen_test/chat_data.dart';
 import 'package:togen_test/data.dart';
@@ -11,8 +12,6 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-  FocusNode keyBoardFocusNode = FocusNode();
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -77,9 +76,8 @@ class _ChatScreenState extends State<ChatScreen> {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
-                    crossAxisAlignment: chatDataList[index].user == 1
-                        ? CrossAxisAlignment.end
-                        : CrossAxisAlignment.start,
+                    crossAxisAlignment:
+                        chatDataList[index].user == 1 ? CrossAxisAlignment.end : CrossAxisAlignment.start,
                     children: [
                       if (chatDataList[index].user == 0)
                         const CircleAvatar(
@@ -115,43 +113,57 @@ class _ChatScreenState extends State<ChatScreen> {
                 );
               },
             ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height,
-              child: Column(
-                children: [
-                  const Spacer(),
-                  TextFormField(
-                    focusNode: keyBoardFocusNode,
-                  ),
-                  Container(
-                    width: double.maxFinite,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      color: Colors.white,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 10),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          IconButton(
-                            onPressed: () {
-                              FocusScope.of(context)
-                                  .requestFocus(keyBoardFocusNode);
-                            },
-                            icon: const Icon(Bootstrap.keyboard_fill),
+            Stack(
+              children: [
+                SizedBox(
+                  height: MediaQuery.of(context).size.height,
+                  child: Column(
+                    children: [
+                      const Spacer(),
+                      Container(
+                        width: double.maxFinite,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25),
+                          color: Colors.white,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              IconButton(
+                                onPressed: () {
+                                  SystemChannels.textInput.invokeMethod("TextInput.show");
+                                },
+                                icon: const Icon(Bootstrap.keyboard_fill),
+                              ),
+                              IconButton(onPressed: () {}, icon: const Icon(Bootstrap.chevron_right),),
+                            ],
                           ),
-                          IconButton(
-                              onPressed: () {},
-                              icon: const Icon(Bootstrap.chevron_right)),
-                        ],
+                        ),
                       ),
+                    ],
+                  ),
+                ),
+                Positioned(
+                  bottom: 50,
+                  right: MediaQuery.of(context).size.width*0.42,
+                  child: Center(
+                    child: FloatingActionButton(
+                      onPressed: () {},
+                      child: const CircleAvatar(
+                          maxRadius: double.maxFinite,
+                          backgroundColor: Color.fromARGB(255, 164, 13, 238),
+                          child: Image(
+                            image: AssetImage("assets/images/chat2.png"),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                     ),
                   ),
-                ],
-              ),
-            )
+                ),
+              ],
+            ),
           ],
         ),
       ),
@@ -172,17 +184,11 @@ class ChatContainer extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width * 0.6,
       decoration: BoxDecoration(
-          color: chat.user == 0
-              ? const Color.fromARGB(255, 18, 46, 87)
-              : Colors.white,
+          color: chat.user == 0 ? const Color.fromARGB(255, 18, 46, 87) : Colors.white,
           borderRadius: BorderRadius.only(
             bottomLeft: const Radius.circular(10),
-            bottomRight: chat.user == 0
-                ? const Radius.circular(20)
-                : const Radius.circular(0),
-            topLeft: chat.user == 0
-                ? const Radius.circular(0)
-                : const Radius.circular(20),
+            bottomRight: chat.user == 0 ? const Radius.circular(20) : const Radius.circular(0),
+            topLeft: chat.user == 0 ? const Radius.circular(0) : const Radius.circular(20),
             topRight: const Radius.circular(20),
           )),
       child: Padding(
@@ -195,3 +201,47 @@ class ChatContainer extends StatelessWidget {
     );
   }
 }
+
+// class BottomStructure extends CustomPainter {
+//   @override
+//   void paint(Canvas canvas, Size size) {
+//     // Layer 1
+
+//     Paint paintFill0 = Paint()
+//       ..color = const Color.fromARGB(255, 255, 255, 255)
+//       ..style = PaintingStyle.fill
+//       ..strokeWidth = size.width * 0.2
+//       ..strokeCap = StrokeCap.round
+//       ..strokeJoin = StrokeJoin.round;
+
+//     Path path_0 = Path();
+//     path_0.moveTo(size.width * 0.2925000, size.height * 0.4314286);
+//     path_0.lineTo(size.width * 0.2924750, size.height * 0.5690143);
+//     path_0.lineTo(size.width * 0.6691667, size.height * 0.5714286);
+//     path_0.lineTo(size.width * 0.6675000, size.height * 0.4300000);
+//     path_0.lineTo(size.width * 0.5441667, size.height * 0.4314286);
+//     path_0.lineTo(size.width * 0.5000750, size.height * 0.5008857);
+//     path_0.lineTo(size.width * 0.4587833, size.height * 0.4991429);
+//     path_0.lineTo(size.width * 0.4183333, size.height * 0.4300000);
+//     path_0.lineTo(size.width * 0.2925000, size.height * 0.4314286);
+//     path_0.close();
+
+//     canvas.drawPath(path_0, paintFill0);
+
+//     // Layer 1
+
+//     Paint paintStroke0 = Paint()
+//       ..color = const Color.fromARGB(255, 33, 150, 243)
+//       ..style = PaintingStyle.stroke
+//       ..strokeWidth = size.width * 0.00
+//       ..strokeCap = StrokeCap.round
+//       ..strokeJoin = StrokeJoin.round;
+
+//     canvas.drawPath(path_0, paintStroke0);
+//   }
+
+//   @override
+//   bool shouldRepaint(covariant CustomPainter oldDelegate) {
+//     return true;
+//   }
+// }
