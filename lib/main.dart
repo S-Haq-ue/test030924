@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:togen_test/screens/chat_screen.dart';
-import 'package:togen_test/screens/flash_card/flash_card.dart';
+import 'package:togen_test/screens/chat_screen/chat_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
         useMaterial3: false,
       ),
-      home: const FlashCard(),
+      home: const ChatScreen(),
     );
   }
 }
