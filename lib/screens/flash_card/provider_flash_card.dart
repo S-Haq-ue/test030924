@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:togen_test/carousel_widget.dart';
+import 'package:togen_test/widgets/carousel_widget.dart';
 
 class ProviderFlashCard extends ChangeNotifier {
   final CarouselSliderController _buttonCarouselController = CarouselSliderController();

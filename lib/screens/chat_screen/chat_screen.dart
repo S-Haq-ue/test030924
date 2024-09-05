@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:provider/provider.dart';
-import 'package:togen_test/chat_data.dart';
+import 'package:togen_test/widgets/chat_data.dart';
 import 'package:togen_test/data.dart';
 import 'package:togen_test/screens/chat_screen/provider_chat_screen.dart';
 
