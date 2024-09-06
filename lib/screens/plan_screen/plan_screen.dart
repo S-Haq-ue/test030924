@@ -3,8 +3,10 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:icons_plus/icons_plus.dart';
+import 'package:togen_test/screens/flash_card2/flash_card2.dart';
 
 class PlanScreen extends StatelessWidget {
+  static const routeName="/PlanScreen";
   const PlanScreen({super.key});
 
   @override
@@ -315,7 +317,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 color: Colors.grey[50],
                 size: 30,
               ),
-              onPressed: () {},
+              onPressed: ()=>Navigator.of(context).pushNamed(FlashCard2.routeName),
             ),
           ),
         ),

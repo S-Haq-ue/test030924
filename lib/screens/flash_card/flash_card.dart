@@ -5,10 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:provider/provider.dart';
+import 'package:togen_test/screens/chat_screen/chat_screen.dart';
 import 'package:togen_test/screens/flash_card/provider_flash_card.dart';
 import 'package:togen_test/screens/flash_card/progress.dart';
+import 'package:togen_test/screens/flash_card2/flash_card2.dart';
 
 class FlashCard extends StatelessWidget {
+  static const routeName = "/FlashCard";
   const FlashCard({super.key});
 
   @override
@@ -156,7 +159,9 @@ class LowerBody extends StatelessWidget {
                 borderRadius: BorderRadius.circular(5),
               ),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed(ChatScreen.routeName);
+            },
             child: const Padding(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
               child: Text(
@@ -167,7 +172,9 @@ class LowerBody extends StatelessWidget {
               ),
             )),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pushNamed(FlashCard2.routeName);
+          },
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.white,
             shape: RoundedRectangleBorder(

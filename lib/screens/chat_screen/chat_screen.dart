@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:provider/provider.dart';
+import 'package:togen_test/screens/flash_card/flash_card.dart';
 import 'package:togen_test/widgets/chat_data.dart';
 import 'package:togen_test/data.dart';
 import 'package:togen_test/screens/chat_screen/provider_chat_screen.dart';
 
 class ChatScreen extends StatelessWidget {
+  static const routeName="/ChatScreen";
   const ChatScreen({super.key});
 
   @override
@@ -158,8 +160,9 @@ class ChatScreen extends StatelessWidget {
                       onTap: (value) {
                         if (value == 0) {
                           SystemChannels.textInput.invokeMethod("TextInput.show");
-                          debugPrint("clicked");
-                        } else {}
+                        } else if(value==1){
+                          Navigator.of(context).pushNamed(FlashCard.routeName);
+                        }
                       },
                     ),
                   ),
