@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:togen_test/const.dart';
 import 'package:togen_test/screens/flash_card/provider_flash_card.dart';
 
 class Progress extends StatelessWidget {
@@ -52,7 +53,7 @@ class CircleSegmentPainter extends CustomPainter {
       ..strokeWidth = 10;
 
     final Paint segmentPaint = Paint()
-      ..color = const Color.fromARGB(255, 164, 13, 238)
+      ..color = primaryColor
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round
       ..strokeWidth = 10;

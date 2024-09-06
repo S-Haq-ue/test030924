@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:icons_plus/icons_plus.dart';
-import 'package:togen_test/data.dart';
+import 'package:togen_test/widgets/data.dart';
+import 'package:togen_test/const.dart';
 import 'package:togen_test/screens/flash_card/flash_card.dart';
 import 'package:togen_test/screens/plan_screen/plan_screen.dart';
 
@@ -24,7 +25,6 @@ class FlashCard2 extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: TextFormField(
                 decoration: const InputDecoration(
-                  // label: const Text("Search"),
                   prefixIcon: Icon(Icons.search),
                   hintText: "Search",
                   fillColor: Color.fromARGB(255, 234, 232, 232),
@@ -104,7 +104,7 @@ class FlashCard2 extends StatelessWidget {
                                           label: const Text("Add Card"),
                                           icon: const Icon(Icons.add),
                                           style: ElevatedButton.styleFrom(
-                                            backgroundColor: const Color.fromARGB(255, 164, 13, 238),
+                                            backgroundColor: primaryColor,
                                           ),
                                         ),
                                         const SizedBox(
@@ -117,7 +117,7 @@ class FlashCard2 extends StatelessWidget {
                                             shape: RoundedRectangleBorder(
                                                 borderRadius: BorderRadius.circular(5),
                                                 side: const BorderSide(
-                                                  color: Color.fromARGB(255, 164, 13, 238),
+                                                  color: primaryColor,
                                                 )),
                                           ),
                                           child: const Text(
@@ -175,7 +175,7 @@ class FlashCard2 extends StatelessWidget {
                                           label: const Text("Add Card"),
                                           icon: const Icon(Icons.add),
                                           style: ElevatedButton.styleFrom(
-                                            backgroundColor: const Color.fromARGB(255, 164, 13, 238),
+                                            backgroundColor: primaryColor,
                                           ),
                                         ),
                                         const SizedBox(
@@ -188,7 +188,7 @@ class FlashCard2 extends StatelessWidget {
                                             shape: RoundedRectangleBorder(
                                                 borderRadius: BorderRadius.circular(5),
                                                 side: const BorderSide(
-                                                  color: Color.fromARGB(255, 164, 13, 238),
+                                                  color: primaryColor,
                                                 )),
                                           ),
                                           child: const Text(

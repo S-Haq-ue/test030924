@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:provider/provider.dart';
+import 'package:togen_test/const.dart';
 import 'package:togen_test/screens/chat_screen/chat_screen.dart';
 import 'package:togen_test/screens/flash_card/provider_flash_card.dart';
 import 'package:togen_test/screens/flash_card/progress.dart';
@@ -30,7 +31,7 @@ class FlashCard extends StatelessWidget {
                   child: Container(
                     height: MediaQuery.of(context).size.height * 0.3,
                     width: double.maxFinite,
-                    color: const Color.fromARGB(255, 164, 13, 238),
+                    color: primaryColor,
                   ),
                 ),
                 const Positioned(right: 40, left: 40, bottom: 50, child: LodingBody()),
@@ -76,7 +77,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color.fromARGB(255, 164, 13, 238),
+      color: primaryColor,
       child: SafeArea(
         child: Stack(
           children: [
@@ -153,7 +154,7 @@ class LowerBody extends StatelessWidget {
               backgroundColor: Colors.white,
               shape: RoundedRectangleBorder(
                 side: const BorderSide(
-                  color: Color.fromARGB(255, 164, 13, 238),
+                  color: primaryColor,
                   width: 1,
                 ),
                 borderRadius: BorderRadius.circular(5),
@@ -179,7 +180,7 @@ class LowerBody extends StatelessWidget {
             backgroundColor: Colors.white,
             shape: RoundedRectangleBorder(
               side: const BorderSide(
-                color: Color.fromARGB(255, 164, 13, 238),
+                color: primaryColor,
                 width: 1,
               ),
               borderRadius: BorderRadius.circular(5),

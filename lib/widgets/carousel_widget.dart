@@ -6,10 +6,8 @@ import 'package:provider/provider.dart';
 import 'package:togen_test/screens/flash_card/provider_flash_card.dart';
 
 class CarouselWidget extends StatelessWidget {
-  // final void Function() onPressed;
   const CarouselWidget({
     super.key,
-    // required this.onPressed,
   });
 
   @override
@@ -50,14 +48,17 @@ class CarouselWidget extends StatelessWidget {
               ],
             ),
             Container(
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: Colors.white),
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(10), color: Colors.white, boxShadow: const [
+                  BoxShadow(blurRadius: 2, offset: Offset(0, 0),),
+                ]),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: Consumer<ProviderFlashCard>(builder: (context, flashCardProvider, child) {
                     return IconButton(
                         onPressed: () {
                           flashCardProvider.buttonCarouselController
-                              .nextPage( duration: const Duration(milliseconds: 300), curve: Curves.linear);
+                              .nextPage(duration: const Duration(milliseconds: 300), curve: Curves.linear);
                         },
                         icon: const Icon(
                           Bootstrap.chevron_right,

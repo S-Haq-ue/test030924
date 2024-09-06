@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:togen_test/data.dart';
+import 'package:togen_test/widgets/data.dart';
 
 
 class ChatModel {

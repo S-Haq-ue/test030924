@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:icons_plus/icons_plus.dart';
+import 'package:togen_test/const.dart';
 import 'package:togen_test/screens/flash_card2/flash_card2.dart';
 
 class PlanScreen extends StatelessWidget {
@@ -23,8 +24,8 @@ class PlanScreen extends StatelessWidget {
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      Color.fromARGB(255, 164, 13, 238),
-                      Color.fromARGB(255, 227, 180, 250),
+                      primaryColor,
+                      primaryColorlite,
                     ],
                   ),
                 ),
@@ -65,7 +66,7 @@ class PlanScreen extends StatelessWidget {
                                 "Gold",
                                 style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold),
                               ),
-                              backgroundColor: const Color.fromARGB(255, 227, 180, 250)),
+                              backgroundColor: primaryColorlite),
                           const SizedBox(
                             width: 10,
                           ),
@@ -74,7 +75,7 @@ class PlanScreen extends StatelessWidget {
                                 "Platinum",
                                 style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold),
                               ),
-                              backgroundColor: const Color.fromARGB(255, 227, 180, 250))
+                              backgroundColor: primaryColorlite)
                         ],
                       ),
                     ],
@@ -203,7 +204,7 @@ class PlanScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(255, 164, 13, 238),
+                  backgroundColor: primaryColor,
                 ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
@@ -305,7 +306,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-          gradient: LinearGradient(colors: [Color.fromARGB(255, 164, 13, 238), Color.fromARGB(255, 227, 180, 250)])),
+          gradient: LinearGradient(colors: [primaryColor, primaryColorlite])),
       child: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -357,7 +358,7 @@ class BulletPoint extends CustomPainter {
     final Offset center = Offset(radius, radius);
 
     final Paint segmentPaint = Paint()
-      ..color = const Color.fromARGB(255, 164, 13, 238)
+      ..color = primaryColor
       ..style = PaintingStyle.stroke
       ..strokeWidth = 5;
     canvas.drawArc(

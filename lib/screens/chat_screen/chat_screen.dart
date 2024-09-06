@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:provider/provider.dart';
+import 'package:togen_test/const.dart';
 import 'package:togen_test/screens/flash_card/flash_card.dart';
 import 'package:togen_test/widgets/chat_data.dart';
-import 'package:togen_test/data.dart';
+import 'package:togen_test/widgets/data.dart';
 import 'package:togen_test/screens/chat_screen/provider_chat_screen.dart';
 
 class ChatScreen extends StatelessWidget {
-  static const routeName="/ChatScreen";
+  static const routeName = "/ChatScreen";
   const ChatScreen({super.key});
 
   @override
@@ -29,15 +30,7 @@ class ChatScreen extends StatelessWidget {
             ),
             title: const Row(
               children: [
-                CircleAvatar(
-                  maxRadius: 15,
-                  minRadius: 10,
-                  backgroundColor: Colors.amber,
-                  child: Image(
-                    image: AssetImage("assets/images/man.png"),
-                    fit: BoxFit.contain,
-                  ),
-                ),
+                ProfileIcon(),
                 SizedBox(
                   width: 10,
                 ),
@@ -89,15 +82,7 @@ class ChatScreen extends StatelessWidget {
                                     chatDataList[index].user == 1 ? CrossAxisAlignment.end : CrossAxisAlignment.start,
                                 children: [
                                   if (chatDataList[index].user == 0)
-                                    const CircleAvatar(
-                                      maxRadius: 15,
-                                      minRadius: 10,
-                                      backgroundColor: Colors.amber,
-                                      child: Image(
-                                        image: AssetImage("assets/images/man.png"),
-                                        fit: BoxFit.contain,
-                                      ),
-                                    ),
+                                    const ProfileIcon(),
                                   const SizedBox(
                                     width: 20,
                                   ),
@@ -108,15 +93,7 @@ class ChatScreen extends StatelessWidget {
                                       width: 20,
                                     ),
                                   if (chatDataList[index].user == 1)
-                                    const CircleAvatar(
-                                      maxRadius: 15,
-                                      minRadius: 10,
-                                      backgroundColor: Colors.amber,
-                                      child: Image(
-                                        image: AssetImage("assets/images/man.png"),
-                                        fit: BoxFit.contain,
-                                      ),
-                                    ),
+                                    const ProfileIcon(),
                                 ],
                               ),
                             );
@@ -141,7 +118,7 @@ class ChatScreen extends StatelessWidget {
                       onPressed: () {},
                       child: const CircleAvatar(
                         maxRadius: double.maxFinite,
-                        backgroundColor: Color.fromARGB(255, 164, 13, 238),
+                        backgroundColor: primaryColor,
                         child: Image(
                           image: AssetImage("assets/images/chat2.png"),
                           fit: BoxFit.cover,
@@ -160,7 +137,7 @@ class ChatScreen extends StatelessWidget {
                       onTap: (value) {
                         if (value == 0) {
                           SystemChannels.textInput.invokeMethod("TextInput.show");
-                        } else if(value==1){
+                        } else if (value == 1) {
                           Navigator.of(context).pushNamed(FlashCard.routeName);
                         }
                       },
@@ -171,6 +148,25 @@ class ChatScreen extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class ProfileIcon extends StatelessWidget {
+  const ProfileIcon({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const CircleAvatar(
+      maxRadius: 15,
+      minRadius: 10,
+      backgroundColor: Colors.amber,
+      child: Image(
+        image: AssetImage("assets/images/man.png"),
+        fit: BoxFit.contain,
       ),
     );
   }
