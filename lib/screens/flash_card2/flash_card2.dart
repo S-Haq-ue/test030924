@@ -125,6 +125,7 @@ class FlashCard2 extends StatelessWidget {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
                               color: const Color.fromARGB(255, 255, 252, 240),
+                              border: Border.all(color: const Color.fromARGB(255, 252, 244, 211))
                             ),
                             child: Padding(
                               padding: const EdgeInsets.all(30),

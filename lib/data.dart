@@ -7,6 +7,6 @@ String testText =
 
 List<CardModel> cardList = [
   CardModel(title: "Everyday Phrases", subtitle: "Master Common Expressions Used in Daily Conversations."),
-  CardModel(title: "Travel Vocabulary", subtitle: "Essential Words And Phrases For Your Next Trip"),
+  CardModel(title: "Travel Vocabulary", subtitle: "Essential Words And Phrases For Your Next\n Trip"),
   CardModel(title: "Business English", subtitle: "Key Terms And Dialogues For Professional Settings"),
 ];
